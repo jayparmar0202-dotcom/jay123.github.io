@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay | Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-glow glow1"></div>
+    <div class="background-glow glow2"></div>
+
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">JAY<span>.</span></a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-content reveal">
+                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>Hi, I'm <span>Jay</span></h1>
+
+                <h2>I'm a <span id="typing"></span></h2>
+
+                <p class="hero-description">
+                    A passionate college student interested in programming,
+                    technology and building creative digital experiences.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="hero-image reveal">
+                <div class="profile-circle">
+                    <div class="profile-text">JAY</div>
+                </div>
+                <div class="floating-card">💻 Coding</div>
+                <div class="floating-card card-two">🚀 Learning</div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section reveal">
+            <p class="section-label">GET TO KNOW ME</p>
+            <h2 class="section-title">About <span>Me</span></h2>
+
+            <div class="about-card">
+                <h3>Hello! I'm Jay 👋</h3>
+                <p>
+                    I am a college student passionate about technology and
+                    programming. I enjoy learning new programming languages,
+                    solving problems and developing creative projects.
+                </p>
+                <p>
+                    My goal is to improve my technical skills and become
+                    a successful software developer.
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section reveal">
+            <p class="section-label">WHAT I KNOW</p>
+            <h2 class="section-title">My <span>Skills</span></h2>
+
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon">☕</div>
+                    <h3>Java</h3>
+                    <p>Programming Fundamentals</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>C++</h3>
+                    <p>Problem Solving</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Web Structure</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Web Designing</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>SQL</h3>
+                    <p>Database Management</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section reveal">
+            <p class="section-label">MY WORK</p>
+            <h2 class="section-title">My <span>Projects</span></h2>
+
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-icon">💻</div>
+                    <h3>Personal Portfolio</h3>
+                    <p>A responsive website to showcase my profile, skills and projects.</p>
+                    <span>HTML • CSS • JavaScript</span>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🗃️</div>
+                    <h3>SQL Database Project</h3>
+                    <p>A database project using SQL queries, tables and records.</p>
+                    <span>SQL • MySQL</span>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">⚡</div>
+                    <h3>Programming Practice</h3>
+                    <p>Programming exercises and problem-solving using Java and C++.</p>
+                    <span>Java • C++</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section reveal">
+            <p class="section-label">LET'S CONNECT</p>
+            <h2 class="section-title">Contact <span>Me</span></h2>
+
+            <div class="contact-card">
+                <h3>Have an opportunity or idea?</h3>
+                <p>Feel free to connect with me. I'd love to hear from you!</p>
+
+                <a href="mailto:your-email@example.com" class="btn primary-btn">
+                    Send Me an Email
+                </a>
+
+                <p class="contact-note">
+                    Replace this email with your actual email address.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed & Built by <span>Jay</span> | © <span id="year"></span></p>
+    </footer>
+
+    <button id="topButton" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
