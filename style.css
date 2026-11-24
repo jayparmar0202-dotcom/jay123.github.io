@@ -13,6 +13,7 @@
     --blue: #38bdf8;
     --white: #ffffff;
     --gray: #aab2c8;
+    --border: rgba(255,255,255,0.08);
 }
 
 body {
@@ -22,8 +23,70 @@ body {
     overflow-x: hidden;
 }
 
+body[data-theme="light"] {
+    --background: #f5f7ff;
+    --card: #ffffff;
+    --white: #172033;
+    --gray: #526078;
+    --border: rgba(23,32,51,0.12);
+}
+
 a {
     text-decoration: none;
+}
+
+.certificate-card details {
+    margin: 0 0 18px;
+    color: var(--blue);
+    text-align: left;
+}
+
+.certificate-card summary {
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.certificate-card iframe {
+    display: block;
+    width: 100%;
+    height: 260px;
+    border: 0;
+    border-radius: 8px;
+    background: white;
+}
+
+.certificate-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#cursor-glow {
+    position: fixed;
+    z-index: 999;
+    width: 28px;
+    height: 28px;
+    left: 0;
+    top: 0;
+    border: 1px solid rgba(56, 189, 248, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(168, 85, 247, 0.35);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s, width 0.2s, height 0.2s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #cursor-glow.visible {
+        opacity: 1;
+    }
+
+    #cursor-glow.over-link {
+        width: 42px;
+        height: 42px;
+    }
 }
 
 /* BACKGROUND ANIMATION */
@@ -68,6 +131,10 @@ header {
     backdrop-filter: blur(15px);
 }
 
+body[data-theme="light"] header {
+    background: rgba(245, 247, 255, 0.9);
+}
+
 .navbar {
     max-width: 1150px;
     margin: auto;
@@ -80,7 +147,7 @@ header {
 .logo {
     font-size: 28px;
     font-weight: 800;
-    color: white;
+    color: var(--white);
 }
 
 .logo span {
@@ -105,10 +172,27 @@ header {
 .menu-toggle {
     display: none;
     background: transparent;
-    color: white;
+    color: var(--white);
     border: none;
     font-size: 28px;
     cursor: pointer;
+}
+
+.theme-toggle {
+    background: var(--card);
+    color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    border-color: var(--blue);
 }
 
 /* HERO SECTION */
@@ -224,24 +308,17 @@ header {
     place-items: center;
     background: linear-gradient(135deg, var(--purple), var(--blue));
     padding: 7px;
-    animation: rotate 6s linear infinite;
+    overflow: hidden;
     box-shadow: 0 0 60px rgba(168, 85, 247, 0.3);
 }
 
-.profile-text {
-    background: var(--background);
+.profile-photo {
+    display: block;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-size: 65px;
-    font-weight: 800;
-    animation: rotate 6s linear infinite reverse;
-}
-
-@keyframes rotate {
-    to { transform: rotate(360deg); }
+    object-fit: cover;
+    object-position: center top;
 }
 
 .floating-card {
@@ -283,7 +360,7 @@ header {
 .about-card, .contact-card {
     background: var(--card);
     padding: 40px;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
     border-radius: 15px;
     line-height: 2;
 }
@@ -308,7 +385,7 @@ header {
 
 .skill-card {
     background: var(--card);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
     padding: 30px 15px;
     border-radius: 15px;
     transition: 0.4s;
@@ -341,7 +418,7 @@ header {
 
 .project-card {
     background: var(--card);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
     border-radius: 15px;
     padding: 30px;
     text-align: left;
@@ -370,6 +447,68 @@ header {
 
 .project-card span {
     color: var(--blue);
+    font-size: 12px;
+}
+
+/* GITHUB */
+
+.github-profile-link {
+    margin: -20px 0 30px;
+}
+
+.github-profile-link a {
+    color: var(--blue);
+}
+
+.github-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+.github-panel {
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--card);
+}
+
+.github-panel h3 {
+    margin-bottom: 15px;
+}
+
+.github-status {
+    color: var(--gray);
+    margin-bottom: 12px;
+}
+
+.github-list {
+    display: grid;
+    gap: 12px;
+}
+
+.github-item {
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.github-item a {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.github-item p {
+    margin-top: 6px;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.github-item .github-meta {
+    color: var(--gray);
     font-size: 12px;
 }
 
@@ -439,6 +578,11 @@ footer span {
         display: block;
     }
 
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 12px;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
@@ -480,10 +624,6 @@ footer span {
         height: 220px;
     }
 
-    .profile-text {
-        font-size: 50px;
-    }
-
     .floating-card {
         left: -5px;
     }
@@ -513,6 +653,10 @@ footer span {
         opacity: 1;
         transform: none;
     }
+
+    #cursor-glow {
+        display: none;
+    }
 }
 
 
@@ -526,7 +670,7 @@ footer span {
 }
 
 .certificate-card {
-    background: #111827;
+    background: var(--card);
     border: 1px solid #7733cc;
     border-radius: 15px;
     padding: 25px;
@@ -540,12 +684,12 @@ footer span {
 }
 
 .certificate-card h3 {
-    color: white;
+    color: var(--white);
     margin-bottom: 15px;
 }
 
 .certificate-card p {
-    color: #aaa;
+    color: var(--gray);
     margin-bottom: 20px;
 }
 

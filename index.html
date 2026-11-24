@@ -27,8 +27,13 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#github">GitHub</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+                ☀️
+            </button>
         </nav>
     </header>
 
@@ -53,14 +58,14 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://github.com/jayparmar0202-dotcom" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
 
             <div class="hero-image reveal">
                 <div class="profile-circle">
-                    <div class="profile-text">JAY</div>
+                    <img class="profile-photo" src="./assets/jay-profile.jpg" alt="Jay's profile photo">
                 </div>
                 <div class="floating-card">💻 Coding</div>
                 <div class="floating-card card-two">🚀 Learning</div>
@@ -153,6 +158,74 @@
             </div>
         </section>
 
+        <!-- GITHUB SECTION -->
+        <section id="github" class="section reveal">
+            <p class="section-label">OPEN SOURCE</p>
+            <h2 class="section-title">GitHub <span>Activity</span></h2>
+            <p class="github-profile-link">
+                <a href="https://github.com/jayparmar0202-dotcom" target="_blank" rel="noopener noreferrer">View @jayparmar0202-dotcom on GitHub ↗</a>
+            </p>
+            <div class="github-grid">
+                <div class="github-panel">
+                    <h3>Recently updated projects</h3>
+                    <p class="github-status" id="githubReposStatus" aria-live="polite">Loading public repositories…</p>
+                    <div class="github-list" id="githubRepos"></div>
+                </div>
+                <div class="github-panel">
+                    <h3>Recent public activity</h3>
+                    <p class="github-status" id="githubActivityStatus" aria-live="polite">Loading public activity…</p>
+                    <div class="github-list" id="githubActivity"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES SECTION -->
+        <section id="certificates" class="section reveal">
+            <p class="section-label">LEARNING & GROWTH</p>
+            <h2 class="section-title">My <span>Certificates</span></h2>
+
+            <div class="certificate-container">
+                <article class="certificate-card">
+                    <h3>📊 Microsoft Data Analyst 101</h3>
+                    <p>Microsoft Data Analyst Certificate</p>
+                    <details>
+                        <summary>Preview certificate</summary>
+                        <iframe src="./certificate/microsoft-Data%20Analyst.pdf" title="Microsoft Data Analyst 101 certificate preview" loading="lazy"></iframe>
+                    </details>
+                    <div class="certificate-actions">
+                        <a href="./certificate/microsoft-Data%20Analyst.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                        <a href="./certificate/microsoft-Data%20Analyst.pdf" download>Download</a>
+                    </div>
+                </article>
+
+                <article class="certificate-card">
+                    <h3>🤖 AI Data Engineering Analyst</h3>
+                    <p>Skill India Certificate</p>
+                    <details>
+                        <summary>Preview certificate</summary>
+                        <iframe src="./certificate/Skill%20India-%20AI%20-%20Data%20Engineering%20Analyst.pdf" title="Skill India AI Data Engineering Analyst certificate preview" loading="lazy"></iframe>
+                    </details>
+                    <div class="certificate-actions">
+                        <a href="./certificate/Skill%20India-%20AI%20-%20Data%20Engineering%20Analyst.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                        <a href="./certificate/Skill%20India-%20AI%20-%20Data%20Engineering%20Analyst.pdf" download>Download</a>
+                    </div>
+                </article>
+
+                <article class="certificate-card">
+                    <h3>🚀 TCS iON AI Foundation</h3>
+                    <p>TCS iON Certificate</p>
+                    <details>
+                        <summary>Preview certificate</summary>
+                        <iframe src="./certificate/TCN.pdf" title="TCS iON AI Foundation certificate preview" loading="lazy"></iframe>
+                    </details>
+                    <div class="certificate-actions">
+                        <a href="./certificate/TCN.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                        <a href="./certificate/TCN.pdf" download>Download</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <!-- CONTACT SECTION -->
         <section id="contact" class="section reveal">
             <p class="section-label">LET'S CONNECT</p>
@@ -178,74 +251,8 @@
     </footer>
 
     <button id="topButton" aria-label="Back to top">↑</button>
+    <div id="cursor-glow" aria-hidden="true"></div>
 
     <script src="script.js"></script>
-
-
-
-<section id="certificates" class="section">
-
-    <h2 class="section-title">
-        My <span>Certificates</span>
-    </h2>
-
-    <div class="certificate-container">
-
-        <!-- Microsoft Certificate -->
-        <div class="certificate-card">
-            <h3>📊 Microsoft Data Analyst 101</h3>
-            <p>Microsoft Data Analyst Certificate</p>
-
-            <a href="./certificate/microsoft-Data%20Analyst.pdf"
-               target="_blank">
-                View Certificate
-            </a>
-
-            <a href="./certificate/microsoft-Data%20Analyst.pdf"
-               download>
-                Download PDF
-            </a>
-        </div>
-
-        <!-- Skill India Certificate -->
-        <div class="certificate-card">
-            <h3>🤖 AI Data Engineering Analyst</h3>
-            <p>Skill India Certificate</p>
-
-            <a href="./certificate/Skill%20India-%20AI%20-%20Data%20Engineering%20Analyst.pdf"
-               target="_blank">
-                View Certificate
-            </a>
-
-            <a href="./certificate/Skill%20India-%20AI%20-%20Data%20Engineering%20Analyst.pdf"
-               download>
-                Download PDF
-            </a>
-        </div>
-
-        <!-- TCS Certificate -->
-        <div class="certificate-card">
-            <h3>🚀 TCS iON AI Foundation</h3>
-            <p>TCS iON Certificate</p>
-
-            <a href="./certificate/TCN.pdf"
-               target="_blank">
-                View Certificate
-            </a>
-
-            <a href="./certificate/TCN.pdf"
-               download>
-                Download PDF
-            </a>
-        </div>
-
-    </div>
-</section>
-
-
-
-
-<li><a href="#certificates">Certificates</a></li>
-
 </body>
 </html>
